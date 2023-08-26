@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import useLocalStorage from "./useLocalStorage"
 
-export default function useDarkMode(InitialBoolean) {
-    const [mode, setMode] = useState(InitialBoolean)
+export default function useDarkMode(key, initialBoolean) {
+    const [mode, setMode] = useLocalStorage(key, initialBoolean)
 
     const changeHandler = () => {
         setMode(!mode)
